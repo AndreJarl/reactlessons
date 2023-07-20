@@ -36,7 +36,6 @@ export default function App() {
                          <div style={{border: '1px solid red', padding: '1em', display: 'flex'}} key={index}>
                                <ul>
                                    <li>{task}</li>
-                                
                                    <button onClick={()=> deleteTask(index)}>Delete task</button>
                                </ul>
                          </div>
@@ -47,7 +46,9 @@ export default function App() {
     </div>
 
 
-
+///// for tommorow
+//////ADD HEART BUTTON ON TASK
+/////// DO SOME PROPS PROJECT
     )
 }
 
