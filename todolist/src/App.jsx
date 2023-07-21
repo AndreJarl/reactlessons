@@ -1,18 +1,30 @@
 
 import { useState } from 'react'
-// import {AiFillHeart, AiOutlineHeart} from "react-icons/ai"
+
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
 // import {v4 as uuid} from 'uuid'
 import './App.css'
 
 export default function App() {
      
-     const [tasks, setTasks] = useState([]);
+     const [tasks, setTasks] = useState("");
      const [addedTasks, setAddedTasks] = useState([]);
-
+     const [isLiked, setIsLiked] = useState(false);
+    
+     
     const addTask = () =>{
-       
+       if(tasks.trim() === ""){
+         alert("no task added");
+          return;
+       }else{
         setAddedTasks([...addedTasks, tasks]);
-        setTasks([]);
+        setTasks("");    
+       }
+       
+    }
+    const handleClick = () => {
+        setIsLiked(!isLiked);
+        
     }
     
     const deleteTask = (taskIndex) =>{
@@ -35,19 +47,24 @@ export default function App() {
                     return(
                          <div style={{border: '1px solid red', padding: '1em', display: 'flex'}} key={index}>
                                <ul>
-                                   <li>{task}</li>
+                                   <li style={{ listStyleType: 'none', color: 'red'}}>{task}</li>
+                                   <div style={{display: 'flex'}}>
                                    <button onClick={()=> deleteTask(index)}>Delete task</button>
+                                   {isLiked ? (<AiFillHeart color='red' onClick={handleClick}/>) :(<AiOutlineHeart onClick={handleClick}/>)}
+                                 
+                                   </div>
                                </ul>
                          </div>
                     )
                })}
          
       </div>
+
     </div>
 
 
 ///// for tommorow
-//////ADD HEART BUTTON ON TASK
+
 /////// DO SOME PROPS PROJECT
     )
 }
