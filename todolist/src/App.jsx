@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
 // import {v4 as uuid} from 'uuid'
 import './App.css'
-
+import TaskCompo from './TaskCompo';
 export default function App() {
      
      const [tasks, setTasks] = useState("");
@@ -59,13 +59,19 @@ export default function App() {
                })}
          
       </div>
-
+        
+              <div>
+              
+               <TaskCompo maxchars={40}>
+                 This todo list is a project based learning product. I watch tutorials and do my own projects so that the learning will be more effective.
+               </TaskCompo>
+              </div>
     </div>
 
 
-///// for tommorow
+///// for afternooon
 
-/////// DO SOME PROPS PROJECT
+/////// watch other tutorial
     )
 }
 
