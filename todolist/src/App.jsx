@@ -71,7 +71,7 @@ export default function App() {
 
 ///// for afternooon
 
-/////// watch other tutorial
+/////// CREATE AN APP
     )
 }
 
